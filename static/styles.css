@@ -1,0 +1,194 @@
+:root {
+    --primary-purple: #6D28D9;
+    --secondary-purple: #8B5CF6;
+    --success-green: #10B981;
+    --error-red: #EF4444;
+    --text-primary: #1F2937;
+    --background-light: #F9FAFB;
+    --border-light: #E5E7EB;
+    --shadow-light: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.brand-logo {
+    height: 80px;
+    margin-right: 2rem;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+}
+
+.input-section {
+    margin-top: 2rem;
+}
+
+#ingredient-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+#ingredient-table th {
+    padding: 1rem;
+    text-align: left;
+    background: var(--background-light);
+    border-bottom: 2px solid var(--border-light);
+}
+
+#ingredient-table td {
+    padding: 0.75rem;
+}
+
+.inci-input,
+.concentration-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.inci-input:focus,
+.concentration-input:focus {
+    border-color: var(--primary-purple);
+    outline: none;
+}
+
+.button-primary {
+    background: var(--primary-purple);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.button-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+#submit-btn {
+    width: 300px;
+    margin: 2rem auto;
+    padding: 1rem;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.results-table th,
+.results-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.status-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.check-icon {
+    color: var(--success-green);
+}
+
+.cross-icon {
+    color: var(--error-red);
+}
+
+.law-item {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.6;
+}
+
+/* เพิ่มกฎสำหรับสีเขียว */
+.law-item.green-bg {
+    background: #D1FAE5;
+    color: #065F46;
+    border-left: 4px solid #34D399;
+}
+
+/* แก้ไขสีเหลืองเดิม */
+.law-item.yellow-bg {
+    background: #fcf3d1;
+    color: #eb7126;
+    border-left: 4px solid #ffc35a;
+}
+
+.law-item.red-bg {
+    background: #FEE2E2;
+    color: var(--error-red);
+    border-left: 4px solid var(--error-red);
+}
+
+.icon-add {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    #submit-btn {
+        width: 100%;
+    }
+
+    .app-header {
+        padding: 1rem;
+    }
+
+    .brand-logo {
+        height: 50px;
+        margin-right: 1.5rem;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
