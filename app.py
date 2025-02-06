@@ -13,11 +13,11 @@ def load_ingredients(filename):
 allowed_ingredients = load_ingredients('May_use.json')
 forbidden_ingredients = load_ingredients('Not_use.json')
 
-@app.route('/')
+@app.route('/check_regulation')
 def index():
     return render_template('index.html')
 
-@app.route('/get-ingredient-list')
+@app.route('/check_regulation/get-ingredient-list')
 def get_ingredient_list():
     allowed_names = [name for item in allowed_ingredients for name in item['ชื่อวัตถุ']['ชื่อทั่วไป']]
     forbidden_names = [name for item in forbidden_ingredients for name in item['ชื่อวัตถุ']['ชื่อทั่วไป']]
@@ -96,7 +96,7 @@ def check_regulations(ingredients):
     
     return results
 
-@app.route('/check-regulations', methods=['POST'])
+@app.route('/check_regulation/check-regulations', methods=['POST'])
 def check_regulations_route():
     ingredients = request.json.get('ingredients', [])
     results = check_regulations(ingredients)
